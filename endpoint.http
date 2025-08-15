@@ -14,3 +14,6 @@ Content-Type: application/json
     "name": "Pizza Margherita",
     "price": 25.99
 }
+
+### GET A PRODUCT BY ID
+GET {{baseUrl}}/products/1 HTTP/1.1
