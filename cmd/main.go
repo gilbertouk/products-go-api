@@ -38,6 +38,7 @@ func main() {
 	server.POST("/products", ProductController.CreateProduct)
 	server.GET("/products/:productId", ProductController.GetProductByID)
 	server.PUT("/products/:productId", ProductController.UpdateProduct)
+	server.DELETE("/products/:productId", ProductController.DeleteProduct)
 
 	server.Run(":8000")
 }
