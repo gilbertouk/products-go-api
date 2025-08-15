@@ -16,6 +16,14 @@ func NewProductUseCase(repo repository.ProductRepository) ProductUseCase {
 }
 
 func (pu *ProductUseCase) GetProducts() ([]model.Product, error) {
-	// Implement the logic to retrieve products from the repository
 	return pu.repository.GetProducts()
+}
+
+func (pu *ProductUseCase) CreateProduct(product model.Product) (model.Product, error) {
+	id, err := pu.repository.CreateProduct(product)
+	if err != nil {
+		return model.Product{}, err
+	}
+	product.ID = id
+	return product, nil
 }
