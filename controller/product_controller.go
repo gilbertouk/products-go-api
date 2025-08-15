@@ -107,3 +107,25 @@ func (p *productController) UpdateProduct(ctx *gin.Context) {
 
 	ctx.JSON(http.StatusOK, gin.H{"message": "Product updated successfully"})
 }
+
+func (p *productController) DeleteProduct(ctx *gin.Context) {
+	id := ctx.Param("productId")
+	if id == "" {
+		ctx.JSON(http.StatusBadRequest, gin.H{"error": "Invalid product ID"})
+		return
+	}
+
+	productId, err := strconv.Atoi(id) // Convert string ID to int
+	if err != nil {
+		ctx.JSON(http.StatusBadRequest, gin.H{"error": "Invalid product ID"})
+		return
+	}
+
+	err = p.productUseCase.DeleteProduct(productId)
+	if err != nil {
+		ctx.JSON(http.StatusInternalServerError, gin.H{"error": err.Error()})
+		return
+	}
+
+	ctx.JSON(http.StatusOK, gin.H{"message": "Product deleted successfully"})
+}
