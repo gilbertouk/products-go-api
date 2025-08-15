@@ -36,6 +36,7 @@ func main() {
 	// Define the product routes
 	server.GET("/products", ProductController.GetProducts)
 	server.POST("/products", ProductController.CreateProduct)
+	server.GET("/products/:productId", ProductController.GetProductByID)
 
 	server.Run(":8000")
 }
