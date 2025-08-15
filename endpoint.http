@@ -26,3 +26,6 @@ Content-Type: application/json
     "name": "Shushi",
     "price": 79.99
 }
+
+### DELETE A PRODUCT
+DELETE {{baseUrl}}/products/1 HTTP/1.1
