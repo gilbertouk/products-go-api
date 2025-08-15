@@ -1,0 +1,6 @@
+@baseUrl = http://localhost:8000
+
+GET {{baseUrl}}/ping HTTP/1.1
+
+### GET ALL PRODUCTS
+GET {{baseUrl}}/products HTTP/1.1
