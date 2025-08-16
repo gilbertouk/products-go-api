@@ -8,7 +8,7 @@ import (
 )
 
 const (
-	host     = "localhost"
+	host     = "go_db" // Change this to your database host (localhost || go_db if using Dockerfile)
 	port     = "5432"
 	user     = "postgres"
 	password = "postgres"
